@@ -2,7 +2,8 @@
   "name": "202301-w2chwe-diego-bermudez",
   "version": "1.0.0",
   "description": "",
-  "default": "index.js",
+  "main": "index.js",
+  "type" : "module",
   "scripts": {
     "prebuild:dev": "rimraf dist",
     "prebuild": "rimraf dist",
