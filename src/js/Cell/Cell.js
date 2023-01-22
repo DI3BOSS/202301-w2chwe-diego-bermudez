@@ -1,20 +1,22 @@
 class Cell {
   alive;
-  willBeAlive;
-  neighborsAlive;
+  livingNeighbors;
 
-  constructor(alive = false, willBeAlive = false, neighborsAlive = 0) {
+  constructor(alive = false, livingNeighbors = 0) {
     this.alive = alive;
-    this.willBeAlive = willBeAlive;
-    this.neighborsAlive = neighborsAlive;
+    this.livingNeighbors = livingNeighbors;
   }
 
-  disapear() {
-    this.willBeAlive = false;
+  reap() {
+    this.alive = false;
   }
 
-  rise() {
-    this.willBeAlive = true;
+  sow() {
+    this.alive = true;
+  }
+
+  surround() {
+    this.livingNeighbors++;
   }
 }
 
