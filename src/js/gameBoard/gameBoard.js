@@ -1,19 +1,37 @@
-import Cell from "../Cell/Cell";
+class Cell {
+  alive;
+  willBeAlive;
+  positionX;
+  positionY;
 
-const boardSize = 5;
+  constructor(positionX, positionY, alive = false, willBeAlive = false) {
+    this.positionX = positionX;
+    this.positionY = positionY;
+    this.alive = alive;
+    this.willBeAlive = willBeAlive;
+  }
 
-const gameBoard = [];
+  disapear() {
+    this.willBeAlive = false;
+  }
 
-const randomRise = () => !(Math.random() < 0.5);
-
-const axisZeroPosition = 0;
-
-for (let positionX = axisZeroPosition; positionX < boardSize; positionX++) {
-  gameBoard.push([]);
-
-  for (let positionY = axisZeroPosition; positionY < boardSize; positionY++) {
-    gameBoard[positionX][positionY] = new Cell(randomRise());
+  rise() {
+    this.willBeAlive = true;
   }
 }
 
-export default gameBoard;
+const BoardSize = 10;
+const gameBoard = {};
+const randomRise = !(Math.random() < 0.5);
+
+for (let positionX = 1; positionX <= BoardSize; positionX++) {
+  for (let positionY = 1; positionY <= BoardSize; positionY++) {
+    gameBoard[positionX + "," + positionY] = new Cell(
+      positionX,
+      positionY,
+      randomRise
+    );
+  }
+}
+
+console.table(gameBoard);

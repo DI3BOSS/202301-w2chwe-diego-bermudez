@@ -1,15 +1,17 @@
 class Cell {
   alive;
   willBeAlive;
-  neighborsAlive;
+  positionX;
+  positionY;
 
-  constructor(alive = false, willBeAlive = false, neighborsAlive = 0) {
+  constructor(positionX, positionY, alive = false, willBeAlive = false) {
+    this.positionX = positionX;
+    this.positionY = positionY;
     this.alive = alive;
     this.willBeAlive = willBeAlive;
-    this.neighborsAlive = neighborsAlive;
   }
 
-  disapear() {
+  slay() {
     this.willBeAlive = false;
   }
 
