@@ -1,0 +1,27 @@
+@use "reset/reset";
+@use "variables/variables";
+
+body {
+  background-color: variables.$color-petri-dish;
+  display: flex;
+}
+
+.game-scenario {
+  display: flex;
+}
+.petri-dish {
+  display: flex;
+  flex-direction: column;
+}
+.petri-cell {
+  display: flex;
+  border: 3px solid;
+  border-color: red yellow green transparent;
+
+  width: 80px;
+  height: 80px;
+
+  &--alive {
+    background: beige;
+  }
+}

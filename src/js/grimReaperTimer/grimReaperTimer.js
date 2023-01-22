@@ -1,7 +1,6 @@
 import livingNeighborsChecker from "../livingNeighborsChecker/livingNeighborsChecker";
-import { gameBoard } from "..";
 
-const grimReaperTimer = () => {
+const grimReaperTimer = (gameBoard) => {
   setTimeout(livingNeighborsChecker(gameBoard), 1000);
 };
 
