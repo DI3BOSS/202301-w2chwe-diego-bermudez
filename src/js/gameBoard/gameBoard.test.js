@@ -1,4 +1,4 @@
-import { gameBoardGenerator } from "./gameBoard";
+import { gameBoardGenerator } from "./gameBoardGenerator.test";
 
 describe("Given the function gameBoardGenerator", () => {
   describe("When it receives a boardSize of '5'", () => {
