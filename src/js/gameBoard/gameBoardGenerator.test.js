@@ -1,19 +1,27 @@
-import Cell from "../Cell/Cell";
+import { gameBoardGenerator } from "./gameBoardGenerator";
 
-export const gameBoardGenerator = (boardSize) => {
-  const gameBoard = [];
+describe("Given the function gameBoardGenerator", () => {
+  describe("When it receives a boardSize of '5'", () => {
+    test("Then it should return a matrix of 5 rows", () => {
+      const boardSize = 5;
 
-  const axisZeroPosition = 0;
+      const expectedResult = 5;
 
-  const randomRise = () => !(Math.random() < 0.5);
+      const testGameBoardGenerator = gameBoardGenerator(boardSize).length;
 
-  for (let positionX = axisZeroPosition; positionX < boardSize; positionX++) {
-    gameBoard.push([]);
+      expect(testGameBoardGenerator).toBe(expectedResult);
+    });
+  });
 
-    for (let positionY = axisZeroPosition; positionY < boardSize; positionY++) {
-      gameBoard[positionX][positionY] = new Cell(randomRise());
-    }
-  }
+  describe("When it receives a boardSize of '5'", () => {
+    test("Then it should return a matrix of 5 colums", () => {
+      const boardSize = 5;
 
-  return gameBoard;
-};
+      const expectedResult = 5;
+
+      const testGameBoardGenerator = gameBoardGenerator(boardSize)[0].length;
+
+      expect(testGameBoardGenerator).toBe(expectedResult);
+    });
+  });
+});
