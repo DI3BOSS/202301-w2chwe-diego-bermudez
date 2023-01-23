@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "-": "^0.0.1",
+    "@fontsource/press-start-2p": "^4.5.11",
     "@types/jest": "^29.2.6",
     "D": "^1.0.0"
   },

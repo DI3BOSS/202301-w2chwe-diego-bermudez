@@ -3,7 +3,7 @@ import Cell from "../Cell/Cell";
 const gameBoardGenerator = (boardSize, gameBoard) => {
   const axisZeroPosition = 0;
 
-  const randomRise = () => !(Math.random() < 0.9);
+  const randomRise = () => !(Math.random() < 0.92);
 
   for (let positionX = axisZeroPosition; positionX < boardSize; positionX++) {
     gameBoard.push([]);

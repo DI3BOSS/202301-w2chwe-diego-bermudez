@@ -7,26 +7,31 @@ body {
   justify-content: center;
   align-items: center;
   align-content: center;
-  height: 100vh;
-  width: 100vw;
+  flex-direction: column;
+  height: variables.$body-height;
+  width: variables.$body-width;
+  font-family: variables.$font-main-style;
+  color: variables.$color-cells-alive;
 }
 
 .game-scenario {
+  padding: variables.$padding-top;
   display: flex;
-}
-.petri-dish {
-  display: flex;
-  flex-direction: column;
-}
-.petri-cell {
-  display: flex;
-  border: 1px solid variables.$color-petri-dish;
-  border-radius: 4px;
 
-  width: 10px;
-  height: 10px;
+  &_petri-dish {
+    display: flex;
+    flex-direction: column;
+  }
 
-  &--alive {
-    background: variables.$color-cells-alive;
+  &__petri-cell {
+    display: flex;
+    border-radius: variables.$cell-rounder;
+
+    width: variables.$cell-size;
+    height: variables.$cell-size;
+
+    &--alive {
+      background: variables.$color-cells-alive;
+    }
   }
 }

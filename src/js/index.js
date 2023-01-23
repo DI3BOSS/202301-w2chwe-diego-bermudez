@@ -13,16 +13,19 @@ const gameStart = (boardSize, gameBoard) => {
 
   for (let positionX = 0; positionX < boardSize; positionX++) {
     const cellsRowContainer = document.createElement("div");
-    cellsRowContainer.className = "petri-dish";
+    cellsRowContainer.className = "game-scenario__petri-dish";
     gameUserScenario.appendChild(cellsRowContainer);
 
     for (let positionY = 0; positionY < boardSize; positionY++) {
       const cellContainer = document.createElement("div");
       cellsRowContainer.appendChild(cellContainer);
       if (gameBoard[positionX][positionY]?.alive) {
-        cellContainer.setAttribute("class", "petri-cell petri-cell--alive");
+        cellContainer.setAttribute(
+          "class",
+          "game-scenario__petri-cell game-scenario__petri-cell--alive"
+        );
       } else {
-        cellContainer.setAttribute("class", "petri-cell");
+        cellContainer.setAttribute("class", "game-scenario__petri-cell");
       }
     }
   }
@@ -30,7 +33,6 @@ const gameStart = (boardSize, gameBoard) => {
 
 const grimReaperTimer = () => {
   let nextGeneration = [];
-
   const currentGeneration =
     nextGeneration.length > 0
       ? nextGeneration
