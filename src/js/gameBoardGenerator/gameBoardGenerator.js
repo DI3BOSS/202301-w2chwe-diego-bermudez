@@ -1,10 +1,9 @@
 import Cell from "../Cell/Cell";
-import { gameBoard } from "..";
 
-export const gameBoardGenerator = (boardSize) => {
+const gameBoardGenerator = (boardSize, gameBoard) => {
   const axisZeroPosition = 0;
 
-  const randomRise = () => !(Math.random() < 0.5);
+  const randomRise = () => !(Math.random() < 0.9);
 
   for (let positionX = axisZeroPosition; positionX < boardSize; positionX++) {
     gameBoard.push([]);
@@ -16,3 +15,5 @@ export const gameBoardGenerator = (boardSize) => {
 
   return gameBoard;
 };
+
+export default gameBoardGenerator;
