@@ -3,7 +3,7 @@ import livingNeighborsChecker from "./livingNeighborsChecker/livingNeighborsChec
 
 export const gameBoardSize = 75;
 export const gameBoard = [];
-const delayToReap = 1000;
+const delayToReap = 1200;
 
 const firstGeneration = gameBoardGenerator(gameBoardSize, gameBoard);
 
